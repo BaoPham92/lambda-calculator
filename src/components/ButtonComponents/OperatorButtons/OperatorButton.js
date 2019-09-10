@@ -1,7 +1,8 @@
 import React from "react";
 
 export const OperatorButton = ({
-  operator
+  operator,
+  className
 }) => (
-    <button>Char: {operator.char}, Value: {operator.value}</button>
+    <button className={className}>{operator.char ||   operator.value}</button>
   );

@@ -11,8 +11,16 @@ export const Numbers = () => {
   console.log(nums)
 
   return (
-    <div>
-      {nums.map((index, key) => <NumberButton number={index} key={key}/>)}
+    <div className="left-div">
+      {nums.map((index, key) => {
+        if (index !== '0' && index !== '.') {
+          return <NumberButton className="button numbers" number={index} key={key} />
+        } else if (index === '0') {
+          return <NumberButton className="button numbers num-zero" number={index} key={key} />
+        }else if (index === '.') {
+          return <NumberButton className="button numbers" number={index} key={key} />
+        }
+      })}
     </div>
   );
 };

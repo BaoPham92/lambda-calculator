@@ -1,7 +1,8 @@
 import React from "react";
 
 export const SpecialButton = ({
-  special
+  special,
+  className
 }) => (
-    <button>{special}</button>
+    <button className={className}>{special}</button>
   );

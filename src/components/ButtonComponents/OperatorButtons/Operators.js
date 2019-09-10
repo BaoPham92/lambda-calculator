@@ -9,8 +9,8 @@ export const Operators = () => {
 
   console.log(ops)
   return (
-    <div>
-      {ops.map((index, key) => <OperatorButton operator={index} key={key}/>)}
+    <div className="right-div">
+      {ops.map((index, key) => <OperatorButton  className={"button operators"} operator={index} key={key}/>)}
     </div>
   );
 };

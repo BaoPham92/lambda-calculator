@@ -1,7 +1,8 @@
 import React from "react";
 
 export const NumberButton = ({
-  number
+  number,
+  className
 }) => (
-  <button>{number}</button>
+  <button className={className}>{number}</button>
 );

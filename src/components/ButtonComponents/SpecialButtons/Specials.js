@@ -9,8 +9,8 @@ export const Specials = () => {
 
   console.log(specs)
   return (
-    <div>
-      {specs.map((index, key) => <SpecialButton special={index}  key={key}/>)}
+    <div className="left-div">
+      {specs.map((index, key) => <SpecialButton className={"button specials"} special={index}  key={key}/>)}
     </div>
   );
 };
