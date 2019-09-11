@@ -2,7 +2,12 @@ import React from "react";
 
 export const SpecialButton = ({
   special,
-  className
+  className,
+  set
 }) => (
-    <button className={className}>{special}</button>
+    <button
+      className={className}
+      onClick={() => set(special)}>
+      {special}
+    </button>
   );

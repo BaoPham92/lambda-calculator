@@ -2,7 +2,12 @@ import React from "react";
 
 export const OperatorButton = ({
   operator,
-  className
+  className,
+  set
 }) => (
-    <button className={className}>{operator.char ||   operator.value}</button>
+    <button
+      className={className}
+      onClick={() => set(operator.value)}>
+      {operator.char || operator.value}
+    </button>
   );

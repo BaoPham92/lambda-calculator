@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Display = () => {
-  return <div className="display">{/* Display any props data here */}</div>;
+export const Display = ({count, updateCount}) => {
+  return <div className="display">{count}</div>;
 };

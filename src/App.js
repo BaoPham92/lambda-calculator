@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Numbers } from './components/ButtonComponents/NumberButtons/Numbers'
 import { Operators } from './components/ButtonComponents/OperatorButtons/Operators'
@@ -17,20 +17,31 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
+  // useState
+
+  // Original count
+  const [count, setCount] = useState(0);
+
+  // Number input tracker
+  const [numInput, setNumInput] = useState('');
+  
+  // Operator input tracker
+  const [opInput, setOpInput] = useState(undefined);
+
   return (
     <div className="container">
       <Logo />
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
-        <Display />
+        <Display count={count}/>
         <div className="section-wrapper">
           <section className="section-left">
-            <Specials />
-            <Numbers />
+            <Specials set={setOpInput}/>
+            <Numbers  total={setCount} set={setNumInput} prev={numInput}/>
           </section>
 
           <section className="section-right">
-            <Operators />
+            <Operators set={setOpInput}/>
           </section>
         </div>
       </div>
