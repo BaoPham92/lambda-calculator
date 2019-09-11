@@ -36,12 +36,12 @@ function App() {
         <Display count={count}/>
         <div className="section-wrapper">
           <section className="section-left">
-            <Specials set={setOpInput}/>
-            <Numbers  total={setCount} set={setNumInput} prev={numInput}/>
+            <Specials currentOp={opInput} set={setOpInput}/>
+            <Numbers currentOp={opInput} total={setCount} set={setNumInput} prev={numInput}/>
           </section>
 
           <section className="section-right">
-            <Operators set={setOpInput}/>
+            <Operators currentOp={opInput} set={setOpInput}/>
           </section>
         </div>
       </div>

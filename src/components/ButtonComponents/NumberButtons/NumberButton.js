@@ -11,7 +11,7 @@ export const NumberButton = ({
       className={className}
       onClick={() => {
         // Combine previous with new input
-        set(prev + number)        
+        set(prev + number)
       }}>
       {number}
     </button>

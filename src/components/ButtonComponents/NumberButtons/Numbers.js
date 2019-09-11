@@ -3,6 +3,7 @@ import data from '../../../data'
 import { NumberButton } from './NumberButton'
 
 export const Numbers = ({
+  currentOpt,
   total,
   set,
   prev
@@ -26,11 +27,35 @@ export const Numbers = ({
 
         // Conditionals for button rendering for specific styles
         if (index !== '0' && index !== '.') {
-          return <NumberButton className="button numbers" prev={prev} set={set} number={index} total={total} key={key} />
+          return <NumberButton
+            className="button numbers"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
         } else if (index === '0') {
-          return <NumberButton className="button numbers num-zero" prev={prev} set={set} number={index} total={total} key={key} />
-        }else if (index === '.') {
-          return <NumberButton className="button numbers" prev={prev} set={set} number={index} total={total} key={key} />
+          return <NumberButton
+            className="button numbers num-zero"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
+        } else if (index === '.') {
+          return <NumberButton
+            className="button numbers"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
         }
       })}
     </div>
