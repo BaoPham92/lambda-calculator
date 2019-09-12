@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import data from '../../../data';
+import { SpecialButton } from './SpecialButton';
 
-//import any components needed
+export const Specials = ({
+  currentOp,
+  set
+}) => {
 
-//Import your array data to from the provided data file
+  // State
+  const [specs, setSpecs] = useState(data.specials)
 
-const Specials = () => {
-  // STEP 2 - add the imported data to state
-
+  // console.log(specs)
   return (
-    <div>
-      {/* STEP 3 - Use .map() to iterate over your array data and return a button
-       component matching the name on the provided file. Pass
-       it any props needed by the child component*/}
+    <div className="left-div">
+      {specs.map((index, key) => {
+        // Before any other actions, update previous operator
+        if (currentOp) {
+          set(currentOp)
+        }
+
+         return  <SpecialButton className={"button specials"} set={set} special={index}  key={key}/>
+        })}
     </div>
   );
 };

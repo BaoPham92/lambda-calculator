@@ -1,19 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
+import data from '../../../data'
+import { NumberButton } from './NumberButton'
 
-//import any components needed
-// example of import from data.js. Note all the ../   This is how we move through folders. 
-/* 
-import { numbers } from '../../../data' 
-*/
-//Import your array data to from the provided data file
+export const Numbers = ({
+  currentOpt,
+  total,
+  set,
+  prev
+}) => {
 
-const Numbers = () => {
-  // STEP 2 - add the imported data to state
+  // State
+  const [nums, setNums] = useState(data.numbers)
+
+  // Log data
+  console.log(nums)
+
   return (
-    <div>
-      {/* STEP 3 - Use .map() to iterate over your array data and return a button
-       component matching the name on the provided file. Pass
-       it any props needed by the child component*/}
+    <div className="left-div">
+      {nums.map((index, key) => {
+        // Before any after additions of new inputs, set the previous input.
+        if (!!prev === false) {
+          total(0)
+        } else {
+          total(prev)
+        }
+
+        // Conditionals for button rendering for specific styles
+        if (index !== '0' && index !== '.') {
+          return <NumberButton
+            className="button numbers"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
+        } else if (index === '0') {
+          return <NumberButton
+            className="button numbers num-zero"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
+        } else if (index === '.') {
+          return <NumberButton
+            className="button numbers"
+            currentOpt={currentOpt}
+            prev={prev}
+            set={set}
+            number={index}
+            total={total}
+            key={key}
+          />
+        }
+      })}
     </div>
   );
 };

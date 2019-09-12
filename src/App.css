@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 .container {
     background-color: #c00025;
     width: 100%;
@@ -6,6 +16,7 @@
     border: 2px solid grey;
     padding-bottom: 25px;
 }
+
 .display {
     margin-top: 25px;
     height: 100px;
@@ -19,4 +30,61 @@
     align-items: flex-end;
     padding-right: 8%;
     font-size: 5.0rem;
-  }
+}
+
+.button {
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3rem;
+    border-bottom: 4px solid #3E040F;
+    padding: 1rem 2rem;
+    margin: 0.55rem 1rem;
+    font-size: 3rem;
+    width: 9.5rem;
+}
+
+/* 
+SECTIONS 
+Layout of data characters
+*/
+.section-wrapper {
+    display: flex;
+}
+
+.section-left {
+    width: 70%;
+}
+
+.section-right {
+    width: 20%;
+}
+
+.numbers {
+    background: #123B78;
+}
+
+.num-zero {
+    width: 16rem;
+}
+
+.specials {
+    background: #2060AF;
+}
+
+.operators {
+    background: #3DB4E5;
+}
+
+.left-div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.right-div {
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
